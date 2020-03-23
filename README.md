@@ -1,4 +1,4 @@
-# Hangman
+# Instafilter
 <p align="center">
   <img src="demo/app-icon.png " alt="Instafilter application icon"
 	  title="Instafilter application icon" align="center" width="200" height="200" />
