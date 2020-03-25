@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var intensity: UISlider!
+    @IBOutlet var filterButton: UIButton!
     
     var currentImage: UIImage!
     
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Instafilter"
+        filterButton.setTitle("CISepiaTone", for: .normal)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(importPicture))
         
@@ -104,6 +106,7 @@ class ViewController: UIViewController {
         guard currentImage != nil else { return }
         guard let actionTitle = action.title else { return }
         
+        filterButton.setTitle(actionTitle, for: .normal)
         currentFilter = CIFilter(name: actionTitle)
         
         let beginImage = CIImage(image: currentImage)
