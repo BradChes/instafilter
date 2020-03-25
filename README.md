@@ -8,3 +8,5 @@ Choose a picture from photos, manipulate it with a series of Core Image filters.
 
 ## Examples within this code
 - UISlider
+- Core Image
+- Writing images to the iOS photo library
