@@ -10,3 +10,11 @@ Choose a picture from photos, manipulate it with a series of Core Image filters.
 - UISlider
 - Core Image
 - Writing images to the iOS photo library
+
+## Demonstration
+Small demonstration as to what the game does when on device.
+</br>
+<p align="center">
+<img src="demo/instafilter.gif" alt="Application demonstration"
+	title="Instafilter demonstration" width="250" height="500" />
+</p>
