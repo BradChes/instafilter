@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     var context: CIContext!
     var currentFilter: CIFilter!
     
+    var newImage: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,7 +99,15 @@ class ViewController: UIViewController {
         
         if let cgImage = context.createCGImage(outputImage, from: outputImage.extent) {
             let processedImage = UIImage(cgImage: cgImage)
-                    
+            
+            if newImage == true {
+                self.imageView.alpha = 0
+                UIView.animate(withDuration: 1, delay: 0, options: [], animations: {
+                    self.imageView.alpha = 1
+                }) { (finished) in
+                    self.newImage = false
+                }
+            }
             imageView.image = processedImage
         }
     }
@@ -137,6 +147,7 @@ extension ViewController: UIImagePickerControllerDelegate {
         
         let beginImage = CIImage(image: currentImage)
         currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        newImage = true
         applyProcessing()
     }
 
